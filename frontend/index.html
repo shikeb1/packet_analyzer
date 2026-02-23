@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DPI Engine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Deep Packet Inspector</h1>
+    <div>
+        <h2>Upload PCAP</h2>
+        <input type="file" id="pcapFile" accept=".pcap">
+        <h3>Blocking Rules</h3>
+        <div id="rules">
+            <input type="text" id="ruleIP" placeholder="IP address">
+            <button onclick="addRule('ip')">Block IP</button>
+            <input type="text" id="ruleApp" placeholder="App name (e.g., YOUTUBE)">
+            <button onclick="addRule('app')">Block App</button>
+            <input type="text" id="ruleDomain" placeholder="Domain (e.g., facebook)">
+            <button onclick="addRule('domain')">Block Domain</button>
+        </div>
+        <button onclick="analyze()">Analyze</button>
+    </div>
+    <div id="results"></div>
+    <script src="script.js"></script>
+</body>
+</html>
